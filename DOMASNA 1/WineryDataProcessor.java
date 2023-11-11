@@ -8,27 +8,6 @@ import java.util.List;
 public class WineryDataProcessor {
 
     public static void main(String[] args) {
-//        try {
-//            List<String> inputData = readGeoJsonFile("C:\\Users\\Mateja.Nikolic\\Downloads\\winery_data.json");
-//
-//            // Pipe 1: Filter unnecessary data
-//            List<String> filteredData = inputData.stream()
-//                    .filter(WineryDataProcessor::isWineryFeature)
-//                    .collect(Collectors.toList());
-//
-//            // Pipe 2: Transform data for database insertion
-//            List<String> transformedData = filteredData.stream()
-//                    .map(WineryDataProcessor::transformDataForDatabase)
-//                    .collect(Collectors.toList());
-//
-//            // Pipe 3: Insert data into the database (simulated, replace with actual database logic)
-//            insertDataIntoDatabase(transformedData);
-//
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//    }
-
         try {
             String filePath = "C:\\Users\\Stefan\\Desktop\\Winery\\resource\\winery_data.json";
             JsonNode rootNode = readJsonFile(filePath);
@@ -63,10 +42,6 @@ public class WineryDataProcessor {
         ObjectMapper objectMapper = new ObjectMapper();
         return objectMapper.readTree(new File(filePath));
     }
-
-//    private static List<String> readGeoJsonFile(String filePath) throws IOException {
-//        return Files.readAllLines(Path.of(filePath));
-//    }
 
     private static boolean isWineryFeature(String jsonFeature) {
         // Add logic to determine if a GeoJSON feature represents a winery
