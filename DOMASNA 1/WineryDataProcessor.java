@@ -9,7 +9,7 @@ public class WineryDataProcessor {
 
     public static void main(String[] args) {
         try {
-            String filePath = "C:\\Users\\Stefan\\Desktop\\Winery\\resource\\winery_data.json";
+            String filePath = "C:\\Users\\Asus\\Desktop\\DOMASNA 1\\main\\winery_data.json";
             JsonNode rootNode = readJsonFile(filePath);
 
             // Assuming "data" is an array containing your features
@@ -25,12 +25,28 @@ public class WineryDataProcessor {
                 String shop = propertiesNode.path("shop").asText();
                 String int_name = propertiesNode.path("int_name").asText();
 
-                System.out.println("ID: " + id);
-                System.out.println("Amenity: " + amenity);
-                System.out.println("Name: " + name);
-                System.out.println("Shop: " + shop);
-                System.out.println("International Name: " + int_name);
-                System.out.println("--------------");
+                // Extract coordinates from the "geometry" field
+                JsonNode geometryNode = featureNode.path("geometry");
+                JsonNode coordinatesNode = geometryNode.path("coordinates");
+
+                // Check if coordinatesNode is not null and has the expected structure
+                if (coordinatesNode.isArray() && coordinatesNode.size() > 0) {
+                    JsonNode firstCoordinate = coordinatesNode.get(0).get(0);
+
+                    // Check if firstCoordinate is not null and has the expected structure
+                    if (firstCoordinate != null && firstCoordinate.isArray() && firstCoordinate.size() == 2) {
+                        double longitude = firstCoordinate.get(0).asDouble();
+                        double latitude = firstCoordinate.get(1).asDouble();
+
+                        System.out.println("ID: " + id);
+                        System.out.println("Amenity: " + amenity);
+                        System.out.println("Name: " + name);
+                        System.out.println("Shop: " + shop);
+                        System.out.println("International Name: " + int_name);
+                        System.out.println("Coordinates: (" + latitude + ", " + longitude + ")");
+                        System.out.println("--------------");
+                    }
+                }
             }
 
         } catch (IOException e) {
@@ -42,7 +58,6 @@ public class WineryDataProcessor {
         ObjectMapper objectMapper = new ObjectMapper();
         return objectMapper.readTree(new File(filePath));
     }
-
     private static boolean isWineryFeature(String jsonFeature) {
         // Add logic to determine if a GeoJSON feature represents a winery
         return jsonFeature.contains("winery") &&
@@ -90,9 +105,10 @@ public class WineryDataProcessor {
         return wineryData.substring(start, end);
     }
 
-    private static void insertDataIntoDatabase(List<String> data) {
+    private static void insertDataIntoDatabase( List<String> data) {
         // Simulated database insertion
         System.out.println("Inserting data into the database:");
         data.forEach(System.out::println);
     }
+
 }
