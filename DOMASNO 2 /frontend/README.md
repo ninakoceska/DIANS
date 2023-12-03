@@ -1,1 +1,1 @@
-The project for frontedn is located in master branch. 
+The project for frontend is located in master branch. 
