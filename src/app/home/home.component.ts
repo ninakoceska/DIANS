@@ -10,4 +10,13 @@ import { RouterModule } from '@angular/router'
 })
 export class HomeComponent {
 
+  constructor() {
+  }
+
+  ngOnit() {
+
+  }
+
+  url_logo="./assets/Logo.png"
+
 }

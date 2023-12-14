@@ -20,8 +20,10 @@ export class wineryComponent  {
 
 
   ngOnInit(): void {
-    this.wineries = this.service.getWineries().subscribe(data => this.wineries = data);
+    this.wineries = this.service.getAllWineries().subscribe(data => this.wineries = data);
   }
+
+
   
 }
   
