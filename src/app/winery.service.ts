@@ -9,9 +9,18 @@ export class WineryService {
   constructor(private http: HttpClient) {
   }
 
-  getWineries() {
+  getAllWineries() {
 
     return this.http.get("http://localhost:8080/api/all");
-
   }
+
+
+  getWinery(id: number) {
+    const url = `http://localhost:8080/api/${id}`;
+    return this.http.get(url);
+  }
+
+
+
+
 }

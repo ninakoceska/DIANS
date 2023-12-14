@@ -14,6 +14,6 @@ import { RouterModule } from '@angular/router'
  
 })
 export class AppComponent {
-  title = 'Winery-Client -> @Get Method';
+  title = 'Wineries in Macedonia';
 }
 

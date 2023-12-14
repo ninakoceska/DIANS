@@ -2,13 +2,12 @@
   "ExpandedNodes": [
     "",
     "\\docs",
-    "\\docs\\browser",
     "\\src",
     "\\src\\app",
     "\\src\\app\\home",
     "\\src\\app\\winery",
     "\\src\\assets"
   ],
-  "SelectedNode": "\\docs\\browser\\index.html",
+  "SelectedNode": "\\src\\app\\app.component.html",
   "PreviewInSolutionExplorer": false
 }
