@@ -5,9 +5,15 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\home",
+    "\\src\\app\\login-page",
+    "\\src\\app\\signup-page",
     "\\src\\app\\winery",
     "\\src\\assets"
   ],
+<<<<<<< HEAD
+  "SelectedNode": "\\src\\app\\home\\home.component.html",
+=======
   "SelectedNode": "\\src\\app\\app.component.html",
+>>>>>>> 9ec49711efff74e365d5b69f084c8f194fb728fe
   "PreviewInSolutionExplorer": false
 }
