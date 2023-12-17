@@ -1,63 +1,29 @@
-
-<html>
-
-<style>
-    body {
-      font-family: Arial, sans-serif;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
-    }
-
-    th, td {
-      border: 1px solid #ddd;
-      padding: 8px;
-      text-align: left;
-    }
-
-    th {
-      background-color: #f2f2f2;
-    }
-
-    tr:nth-child(even) {
-      background-color: #f9f9f9;
-    }
- </style>
-
 <body>
 
-  <table>
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Amenity</th>
-        <th>Shop</th>
-        <th>International Name</th>
-        <th>Name</th>
-        <th>Longitude</th>
-        <th>Latitude</th>
-      </tr>
-    </thead>
-    <tbody>
+  <form action="/search" method="get">
+    <label for="search-bar"></label>
+    <input type="text" id="search-bar" name="q" placeholder="Winaries near me">
+    <button type="submit">Search</button>
 
-      <tr *ngFor="let winery of wineries">
-        <td>{{winery.id}}</td>
-        <td>{{winery.amenity}}</td>
-        <td>{{winery.shop}}</td>
-        <td>{{winery.international_name}}</td>
-        <td>{{winery.name}}</td>
-        <td>{{winery.longitude}}</td>
-        <td>{{winery.latitude}}</td>
-      </tr>
+    <div class="logo-container">
+      <img src="assets/wineryLogo.png">
+    </div>
 
-    </tbody>
-  </table>
+    <div class="card-row" *ngFor="let winery of wineries; let i = index">
+
+      <div class="card">
+        <img [src]="wineries[i].image_path" alt="{{ wineries[i].international_name }}">
+      </div>
+
+
+      <div class="card" *ngIf="wineries[i+1].name != null ">
+        <img [src]="wineries[i+1].image_path" alt="{{ wineries[i+1].international_name }}">
+      </div>
+
+    </div>
+
+  </form>
+
 
 
 </body>
-</html>
-
-

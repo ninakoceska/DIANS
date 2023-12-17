@@ -8,7 +8,7 @@ import { wineryComponent } from './winery/winery.component';
 const routerConfig: Routes = [
 
   { path: '', component: HomeComponent, title: "Home Page" },
-  { path: 'wineries', component: wineryComponent, title: "WineriesTable" },
+  { path: 'wineries', component: wineryComponent, title: "Wineries" },
   { path: 'loginPage', component: LoginPageComponent, title: "LoginPage" },
   { path: 'singUpPage', component: SignupPageComponent, title: "SignUpPage" }
 ]
