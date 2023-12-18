@@ -1,5 +1,5 @@
-import { Component, OnInit, Injectable } from '@angular/core';
-import { CommonModule, NgFor } from '@angular/common' 
+import { Component, OnInit, Injectable, NgModule } from '@angular/core';
+import { CommonModule, NgFor, NgIf } from '@angular/common' 
 import { WineryService } from '../winery.service';
 
 @Component({
@@ -7,7 +7,7 @@ import { WineryService } from '../winery.service';
   standalone: true,
   styleUrls: ['./winery.component.css'],
   templateUrl: './winery.component.html',
-  imports: [CommonModule, NgFor],
+  imports: [CommonModule, NgFor, NgIf],
  
 })
 
@@ -16,13 +16,14 @@ export class wineryComponent  {
 
 
   wineries: any;
+
   constructor(private service: WineryService) { }
 
 
   ngOnInit(): void {
     this.wineries = this.service.getAllWineries().subscribe(data => this.wineries = data);
-    console.log(this.wineries)
   }
+
 
 
   

@@ -4,9 +4,10 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\home",
+    "\\src\\app\\upload-image",
     "\\src\\app\\winery",
     "\\src\\assets"
   ],
-  "SelectedNode": "\\src\\app\\winery\\winery.component.ts",
+  "SelectedNode": "\\src\\app\\upload-image\\upload-image.component.ts",
   "PreviewInSolutionExplorer": false
 }
