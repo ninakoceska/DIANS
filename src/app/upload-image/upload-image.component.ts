@@ -59,7 +59,6 @@ export class UploadImageComponent {
         },
         err => console.log('Error Occured duringng saving: ' + err)
       );
-
-
+      
   }
 }
