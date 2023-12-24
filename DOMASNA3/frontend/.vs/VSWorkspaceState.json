@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\home",
+    "\\src\\app\\map",
+    "\\src\\app\\upload-image",
+    "\\src\\app\\winery",
+    "\\src\\assets"
+  ],
+  "SelectedNode": "\\src\\app\\upload-image\\upload-image.component.ts",
+  "PreviewInSolutionExplorer": false
+}

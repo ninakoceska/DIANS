@@ -1,0 +1,79 @@
+
+* {
+ 
+  margin: auto;
+  background-color: #991f2e;
+  color: #e4c5bd;
+}
+
+#search-bar {
+  padding: 8px;
+  width: 200px;
+  background-color: #991f2e;
+  color: #e4c5bd;
+}
+
+body {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #991f2e;
+  color: #e4c5bd;
+}
+
+.logo-container {
+  width: 100px;
+  float: left;
+  top: 10px;
+  left: 10px;
+  background-color: #991f2e;
+  color: #e4c5bd;
+}
+
+.card-row {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 20px; /* Adjust margin as needed */
+  background-color: #991f2e;
+  color: #e4c5bd;
+}
+
+
+
+.card-row {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 20px; /* Adjust margin as needed */
+  background-color: #991f2e;
+  color: #e4c5bd;
+}
+
+#search-bar {
+  padding: 8px;
+  background-color: #991f2e;
+  color: #e4c5bd;
+}
+
+.card {
+  width: 200px;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: center;
+  background-color: #991f2e;
+  color: #e4c5bd;
+}
+
+  .card img {
+    max-width: 100%;
+    height: auto;
+    background-color: #991f2e;
+    color: #e4c5bd;
+  }
