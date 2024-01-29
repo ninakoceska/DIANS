@@ -1,0 +1,346 @@
+
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+.top-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #8d0f0f;
+  padding: 10px;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.top-section {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.logo {
+  margin-right: 20px;
+  margin-bottom: 10px;
+}
+
+  .logo img {
+    height: 50px;
+  }
+
+.search-and-filters {
+  width: 100%;
+}
+
+.search-container {
+  position: relative;
+  flex-grow: 1;
+  max-width: calc(100% - 60px);
+}
+
+  .search-container button {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+  }
+
+#search-bar {
+  width: 100%;
+  padding: 10px 45px 10px 20px;
+  border-radius: 30px;
+  border: 2px solid #e6c5bc;
+  outline: none;
+  background-color: #8d0f0f;
+  color: #e6c5bc;
+  font-size: 16px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+  #search-bar::placeholder {
+    color: #e6c5bc;
+    opacity: 1;
+  }
+
+#search-button {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.filter-buttons {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+  .filter-buttons .button {
+    background-color: #e6c5bc;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    padding: 10px 20px;
+    margin: 0;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 16px;
+  }
+
+.button {
+  margin: 0 5px; /* Add space between buttons */
+}
+
+Filter Button
+.filterIcon {
+  cursor: pointer;
+  width: 2rem;
+  height: 1.5rem;
+  display: block;
+  position: relative;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .5s ease-in-out;
+  -moz-transition: .5s ease-in-out;
+  -o-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+  box-sizing: border-box;
+  margin-right: 10px;
+}
+
+.filter-buttons .button:hover {
+  background-color: #e6c5bc;
+}
+/* Filter Button */
+.filterIcon {
+  width: 2rem;
+  height: 1.5rem;
+  display: block;
+  position: relative;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .5s ease-in-out;
+  -moz-transition: .5s ease-in-out;
+  -o-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+  box-sizing: border-box;
+}
+
+  /* Line Style */
+  .filterIcon span {
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background: #e6c5bc;
+    border-radius: 2px;
+    opacity: 1;
+    z-index: 0;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+  }
+
+    /* Circle Style */
+    .filterIcon span::after {
+      display: block;
+      position: absolute;
+      height: 0.25rem;
+      width: 0.25rem;
+      background: #8d0f0f;
+      border-radius: 50%;
+      border: 2px solid #e6c5bc;
+      opacity: 1;
+      z-index: 5;
+      top: -150%;
+      content: "";
+      -webkit-transition: .25s ease-in-out;
+      -moz-transition: .25s ease-in-out;
+      -o-transition: .25s ease-in-out;
+      transition: .25s ease-in-out;
+    }
+
+
+    /* Filter State - Panel Closed */
+
+    /* TOP */
+    .filterIcon span:nth-child(1) {
+      top: 0;
+    }
+      /* Line */
+      .filterIcon span:nth-child(1)::after {
+        left: 15%;
+      }
+    /* Circle */
+
+    /* MIDDLE */
+    .filterIcon span:nth-child(2) {
+      top: 46%;
+    }
+      /* Line */
+      .filterIcon span:nth-child(2)::after {
+        left: 60%;
+      }
+    /* Circle */
+
+    /* BOTTOM */
+    .filterIcon span:nth-child(3) {
+      bottom: 0;
+    }
+      /* Line */
+      .filterIcon span:nth-child(3)::after {
+        left: 30%;
+      }
+  /* Circle */
+
+
+  /* Closed State - Panel Open */
+
+  /* Circle Style */
+  .filterIcon.open span::after {
+    opacity: 0;
+  }
+
+  /* TOP */
+  .filterIcon.open span:nth-child(1) {
+    top: 0;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+    /* Line */
+    .filterIcon.open span:nth-child(1)::after {
+      left: 60%;
+    }
+  /* Circle */
+
+  /* MIDDLE */
+  .filterIcon.open span:nth-child(2) {
+    top: 46%;
+    opacity: 0;
+  }
+    /* Line */
+    .filterIcon.open span:nth-child(2)::after {
+      left: 15%;
+    }
+  /* Circle */
+
+  /* BOTTOM */
+  .filterIcon.open span:nth-child(3) {
+    bottom: 0;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+    /* Line */
+    .filterIcon.open span:nth-child(3)::after {
+      left: 55%;
+    }
+  /* Circle */
+
+
+  /* Hover State - Move circles slightly on hover*/
+  .filterIcon:hover span:nth-child(1)::after {
+    left: 25%;
+  }
+
+  .filterIcon:hover span:nth-child(2)::after {
+    left: 50%;
+  }
+
+  .filterIcon:hover span:nth-child(3)::after {
+    left: 40%;
+  }
+
+
+.navbar {
+  background-color: #333;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.nav-item {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+  .nav-item img {
+    width: 24px;
+    height: 24px;
+    margin-bottom: 5px;
+  }
+
+  .nav-item span {
+    font-size: 0.9em;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+.bottom-nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #333;
+  padding: 10px 0;
+}
+
+.nav-item a, .nav-item a:visited, .nav-item a:active {
+  border: none;
+  outline: none;
+  box-shadow: none;
+  background-image: none;
+  background-color: #000;
+}
+
+.nav-item img {
+  width: 100px;
+  height: 100px;
+  display: block;
+}
+
+.nav-item:hover {
+  background-color: #555;
+}
+
+.nav-item span {
+  font-size: smaller;
+  text-align: center;
+}
+
+
+.nav-item:hover {
+  background-color: #555;
+  padding: 5px;
+  border-radius: 5px;
+}
